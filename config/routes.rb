@@ -1,4 +1,6 @@
 Obs::Application.routes.draw do
+  get 'obs' => 'obs#index'
+
   authenticated :user do
     root :to => 'home#index'
   end
