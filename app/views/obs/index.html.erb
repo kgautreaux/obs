@@ -1,1 +1,9 @@
-Hello!
+<div ng-app="Obs">
+  <div ng-controller="ObsController">
+    <input type="text" ng-model="name" required />
+    <p>
+    Hello {{name}}!
+    </p>
+    <div ng-view></div>
+  </div>
+</div>

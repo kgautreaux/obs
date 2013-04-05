@@ -16,4 +16,5 @@
 //= require angular
 //= require angular-bootstrap
 //= require angular-resource
+//= require angular-cookies
 //= require_tree .
