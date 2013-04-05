@@ -8,6 +8,7 @@ gem "cancan", ">= 1.6.9"
 gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.1.0"
 gem "figaro", ">= 0.6.3"
+gem "angularjs-rails"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
