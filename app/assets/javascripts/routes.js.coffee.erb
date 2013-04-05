@@ -1,0 +1,13 @@
+obsApp = angular.module("Obs", ['ngCookies', 'ngResource'], ($routeProvider, $locationProvider) ->
+  $routeProvider.when("/index",
+      controller: 'ObsController',
+      templateUrl: '<%= Rails.application.routes.url_helpers.templates_index_path %>'
+  )
+).run(($route, $http, $templateCache) ->
+    angular.forEach($route.routes, (r) ->
+      $http.get(r.templateUrl, {cache: $templateCache}) if r.templateUrl
+    )
+  )
+obsApp.controller('ObsController', ($scope) ->
+  $scope.name = "World"
+)
