@@ -2,7 +2,13 @@ obsApp = angular.module("Obs", ['ngCookies', 'ngResource'], ($routeProvider, $lo
   $routeProvider.when("/index",
       controller: 'ObsController',
       templateUrl: '<%= Rails.application.routes.url_helpers.templates_index_path %>'
-  )
+  ).when("/edit/:id",
+      controller: 'ObsController',
+      templateUrl: '<%= Rails.application.routes.url_helpers.templates_edit_path %>'
+  ).when("/new",
+      controller: 'ObsController',
+      templateUrl: '<%= Rails.application.routes.url_helpers.templates_new_path %>'
+  ).otherwise({redirectTo: '/index'})
 ).run(($route, $http, $templateCache) ->
     angular.forEach($route.routes, (r) ->
       $http.get(r.templateUrl, {cache: $templateCache}) if r.templateUrl
