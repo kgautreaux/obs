@@ -1,4 +1,4 @@
-obsApp = angular.module("Obs", ['ngCookies', 'ngResource'], ($routeProvider, $locationProvider) ->
+obsApp = angular.module("Obs", ['mobile-navigate', 'ngCookies', 'ngResource'], ($routeProvider, $locationProvider) ->
   $routeProvider.when("/index",
       controller: 'ObsController',
       templateUrl: '<%= Rails.application.routes.url_helpers.templates_index_path %>'
@@ -14,6 +14,6 @@ obsApp = angular.module("Obs", ['ngCookies', 'ngResource'], ($routeProvider, $lo
       $http.get(r.templateUrl, {cache: $templateCache}) if r.templateUrl
     )
   )
-obsApp.controller('ObsController', ($scope) ->
+obsApp.controller('ObsController', ($scope, $navigate) ->
   $scope.name = "World"
 )
