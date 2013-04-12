@@ -9,11 +9,12 @@ obsApp = angular.module("Obs", ['mobile-navigate', 'ngCookies', 'ngResource'], (
       controller: 'ObsController',
       templateUrl: '<%= Rails.application.routes.url_helpers.templates_new_path %>'
   ).otherwise({redirectTo: '/index'})
-).run(($route, $http, $templateCache) ->
-    angular.forEach($route.routes, (r) ->
-      $http.get(r.templateUrl, {cache: $templateCache}) if r.templateUrl
-    )
-  )
+)
+   # .run(($route, $http, $templateCache) ->
+   # angular.forEach($route.routes, (r) ->
+   #   $http.get(r.templateUrl, {cache: $templateCache}) if r.templateUrl
+   # )
+   # )
 obsApp.controller('ObsController', ($scope, $navigate) ->
   $scope.name = "World"
 )

@@ -1,9 +1,16 @@
 class TemplatesController < ActionController::Metal
   def index
     self.response_body = <<-END
-    <p>
-      Fucking Works {{name}}!
-    </p>
+      <div class="toolbar">
+        <h1 id="pageTitle">Obs</h1>
+      </div>
+      <div class="content panel">
+      <ul>
+        <li>
+          <a ng-tap="$navigate.go('/new')" href>New</a>
+        </li>
+      </ul>
+      </div>
     END
   end
 
